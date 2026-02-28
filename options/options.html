@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Tab Jump 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <h1>⚡ Tab Jump 设置</h1>
+      <p class="description">配置快捷跳转映射，输入关键词即可快速跳转到指定网站</p>
+    </header>
+
+    <!-- 快捷键信息 -->
+    <section class="card">
+      <h3 class="card-title">⌨️ 快捷键</h3>
+      <p>当前快捷键：<kbd>Alt</kbd> + <kbd>J</kbd></p>
+      <p class="hint">
+        可在 <a href="#" id="shortcutLink">chrome://extensions/shortcuts</a> 中自定义快捷键
+      </p>
+    </section>
+
+    <!-- 映射配置 -->
+    <section class="card">
+      <div class="card-header">
+        <h3 class="card-title">🔗 跳转映射配置</h3>
+        <button id="addBtn" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          添加映射
+        </button>
+      </div>
+
+      <div id="mappingsList" class="mappings-list"></div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">📋</div>
+        <p>暂无配置</p>
+        <p class="hint">点击"添加映射"开始配置快捷跳转</p>
+      </div>
+    </section>
+
+    <!-- 使用说明 -->
+    <section class="card">
+      <h3 class="card-title">📖 使用说明</h3>
+      <ol class="usage-list">
+        <li>按下快捷键 <kbd>Alt</kbd>+<kbd>J</kbd> 打开搜索框</li>
+        <li>输入关键词（如 <code>loop</code>）</li>
+        <li>如果配置了映射（如 <code>loop → www.loop.com</code>），该网站优先显示</li>
+        <li>同时搜索当前窗口所有标签页 URL（不含参数和 hash），匹配的也会显示</li>
+        <li>使用 <kbd>↑</kbd><kbd>↓</kbd> 选择，<kbd>Enter</kbd> 跳转</li>
+      </ol>
+    </section>
+  </div>
+
+  <!-- Toast 提示 -->
+  <div id="toast" class="toast hidden">✓ 已保存</div>
+
+  <script src="options.js"></script>
+</body>
+</html>
