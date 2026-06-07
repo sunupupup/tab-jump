@@ -14,7 +14,7 @@
 ## 🎯 核心功能
 
 ### 1. 快捷键快速搜索
-- **默认快捷键**：`Alt + J`（可在 `chrome://extensions/shortcuts` 自定义）
+- **默认快捷键**：`Ctrl + J`（可在 `chrome://extensions/shortcuts` 自定义）
 - 按下快捷键后弹出搜索框，即时搜索匹配结果
 
 ### 2. 智能搜索匹配
@@ -136,7 +136,7 @@ searchInput.addEventListener('input', debounce(handleSearch, 120));
    - 配置自动保存
 
 2. **快速搜索**
-   - 按下 `Alt + J` 打开搜索框
+   - 按下 `Ctrl + J` 打开搜索框
    - 输入 `loop`，配置的网站优先显示
    - 同时显示当前窗口所有包含 `loop` 的标签页
 

@@ -6,6 +6,7 @@ let results = [];
 const searchInput = document.getElementById('searchInput');
 const resultsList = document.getElementById('resultsList');
 const openOptions = document.getElementById('openOptions');
+const reloadAllTabs = document.getElementById('reloadAllTabs');
 
 // ===== 初始化 =====
 searchInput.focus();
@@ -14,6 +15,22 @@ searchInput.focus();
 openOptions.addEventListener('click', (e) => {
   e.preventDefault();
   chrome.runtime.openOptionsPage();
+});
+
+// ===== 重新加载所有 Tab =====
+reloadAllTabs.addEventListener('click', async () => {
+  const tabs = await chrome.tabs.query({ currentWindow: true });
+  for (const tab of tabs) {
+    chrome.tabs.reload(tab.id);
+  }
+  reloadAllTabs.classList.add('success');
+  reloadAllTabs.querySelector('svg').style.display = 'none';
+  reloadAllTabs.innerHTML = `
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    已刷新 ${tabs.length} 个标签页`;
+  setTimeout(() => window.close(), 800);
 });
 
 // ===== 搜索输入监听 =====

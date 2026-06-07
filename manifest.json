@@ -9,12 +9,12 @@
   ],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Tab Jump (Alt+J)"
+    "default_title": "Tab Jump (Ctrl+J)"
   },
   "commands": {
     "_execute_action": {
       "suggested_key": {
-        "default": "Alt+J"
+        "default": "Ctrl+J"
       },
       "description": "打开 Tab Jump 搜索框"
     }

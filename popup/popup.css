@@ -153,6 +153,43 @@ body {
   margin-bottom: 8px;
 }
 
+/* ===== 工具栏 ===== */
+.actions-bar {
+  padding: 8px 12px;
+  border-top: 1px solid #313244;
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  background: #313244;
+  color: #cdd6f4;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.action-btn:hover {
+  background: #45475a;
+  border-color: #585b70;
+}
+
+.action-btn:active {
+  background: #585b70;
+}
+
+.action-btn.success {
+  border-color: #a6e3a1;
+  color: #a6e3a1;
+}
+
 /* ===== 底部栏 ===== */
 .footer {
   display: flex;
